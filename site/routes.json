@@ -1,0 +1,142 @@
+[
+  {
+    "file": "index.html",
+    "lang": "en",
+    "kind": "home",
+    "game": null,
+    "noindex": false
+  },
+  {
+    "file": "support/index.html",
+    "lang": "en",
+    "kind": "support",
+    "game": null,
+    "noindex": false
+  },
+  {
+    "file": "privacy/index.html",
+    "lang": "en",
+    "kind": "privacy",
+    "game": null,
+    "noindex": false
+  },
+  {
+    "file": "terms/index.html",
+    "lang": "en",
+    "kind": "terms",
+    "game": null,
+    "noindex": true
+  },
+  {
+    "file": "push-burst/index.html",
+    "lang": "en",
+    "kind": "home",
+    "game": "push-burst",
+    "noindex": false
+  },
+  {
+    "file": "push-burst/support/index.html",
+    "lang": "en",
+    "kind": "support",
+    "game": "push-burst",
+    "noindex": false
+  },
+  {
+    "file": "push-burst/privacy/index.html",
+    "lang": "en",
+    "kind": "privacy",
+    "game": "push-burst",
+    "noindex": true
+  },
+  {
+    "file": "waddle-rush/index.html",
+    "lang": "en",
+    "kind": "home",
+    "game": "waddle-rush",
+    "noindex": false
+  },
+  {
+    "file": "waddle-rush/support/index.html",
+    "lang": "en",
+    "kind": "support",
+    "game": "waddle-rush",
+    "noindex": false
+  },
+  {
+    "file": "waddle-rush/privacy/index.html",
+    "lang": "en",
+    "kind": "privacy",
+    "game": "waddle-rush",
+    "noindex": true
+  },
+  {
+    "file": "ko/index.html",
+    "lang": "ko",
+    "kind": "home",
+    "game": null,
+    "noindex": false
+  },
+  {
+    "file": "ko/support/index.html",
+    "lang": "ko",
+    "kind": "support",
+    "game": null,
+    "noindex": false
+  },
+  {
+    "file": "ko/privacy/index.html",
+    "lang": "ko",
+    "kind": "privacy",
+    "game": null,
+    "noindex": false
+  },
+  {
+    "file": "ko/terms/index.html",
+    "lang": "ko",
+    "kind": "terms",
+    "game": null,
+    "noindex": true
+  },
+  {
+    "file": "ko/push-burst/index.html",
+    "lang": "ko",
+    "kind": "home",
+    "game": "push-burst",
+    "noindex": false
+  },
+  {
+    "file": "ko/push-burst/support/index.html",
+    "lang": "ko",
+    "kind": "support",
+    "game": "push-burst",
+    "noindex": false
+  },
+  {
+    "file": "ko/push-burst/privacy/index.html",
+    "lang": "ko",
+    "kind": "privacy",
+    "game": "push-burst",
+    "noindex": true
+  },
+  {
+    "file": "ko/waddle-rush/index.html",
+    "lang": "ko",
+    "kind": "home",
+    "game": "waddle-rush",
+    "noindex": false
+  },
+  {
+    "file": "ko/waddle-rush/support/index.html",
+    "lang": "ko",
+    "kind": "support",
+    "game": "waddle-rush",
+    "noindex": false
+  },
+  {
+    "file": "ko/waddle-rush/privacy/index.html",
+    "lang": "ko",
+    "kind": "privacy",
+    "game": "waddle-rush",
+    "noindex": true
+  }
+]

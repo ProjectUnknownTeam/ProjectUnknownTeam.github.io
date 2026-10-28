@@ -1,0 +1,27 @@
+{
+  "baseUrl": "https://projectunknownteam.github.io/",
+  "operator": "ProjectUnknown",
+  "previousOperatorSpelling": "Project Unknown",
+  "email": "help.projectunknown.team@gmail.com",
+  "publisherId": "pub-8527204964749596",
+  "updated": "2026-10-28",
+  "supportRetention": "necessary",
+  "supportRetentionConfirmed": false,
+  "legalReviewComplete": false,
+  "games": {
+    "push-burst": {
+      "name": "Push Burst",
+      "packageName": "com.projectunknown.pushburst.game",
+      "googlePlay": null,
+      "appStore": null
+    },
+    "waddle-rush": {
+      "name": "Waddle Rush",
+      "packageName": "com.projectunknown.waddlerush",
+      "cosmetics": 124,
+      "slots": 6,
+      "googlePlay": null,
+      "appStore": null
+    }
+  }
+}

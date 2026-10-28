@@ -1,0 +1,805 @@
+{
+  "report": [
+    {
+      "width": 320,
+      "page": "index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Little games.Lovely moments.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Let’s get you back to playing.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Privacy, by game.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "terms/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Terms of use",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "push-burst/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "A little push.A big pop.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "push-burst/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "A little help, right here.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "push-burst/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Privacy policy",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "waddle-rush/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Little penguin.Big rush.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "waddle-rush/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "A little help, right here.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "waddle-rush/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Privacy policy",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "ko/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "작은 게임,기분 좋은 순간.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "ko/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "다시 즐겁게 플레이하도록.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "ko/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "게임별 개인정보 안내",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "ko/terms/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "이용약관",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "ko/push-burst/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "살짝 밀면,기분 좋게 팡!",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "ko/push-burst/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "무엇을 도와드릴까요?",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "ko/push-burst/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "개인정보처리방침",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "ko/waddle-rush/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "작은 펭귄의커다란 도전.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "ko/waddle-rush/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "무엇을 도와드릴까요?",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 320,
+      "page": "ko/waddle-rush/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "개인정보처리방침",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Little games.Lovely moments.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Let’s get you back to playing.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Privacy, by game.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "terms/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Terms of use",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "push-burst/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "A little push.A big pop.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "push-burst/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "A little help, right here.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "push-burst/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Privacy policy",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "waddle-rush/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Little penguin.Big rush.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "waddle-rush/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "A little help, right here.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "waddle-rush/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Privacy policy",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "ko/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "작은 게임,기분 좋은 순간.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "ko/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "다시 즐겁게 플레이하도록.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "ko/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "게임별 개인정보 안내",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "ko/terms/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "이용약관",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "ko/push-burst/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "살짝 밀면,기분 좋게 팡!",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "ko/push-burst/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "무엇을 도와드릴까요?",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "ko/push-burst/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "개인정보처리방침",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "ko/waddle-rush/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "작은 펭귄의커다란 도전.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "ko/waddle-rush/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "무엇을 도와드릴까요?",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 390,
+      "page": "ko/waddle-rush/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "개인정보처리방침",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Little games.Lovely moments.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Let’s get you back to playing.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Privacy, by game.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "terms/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Terms of use",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "push-burst/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "A little push.A big pop.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "push-burst/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "A little help, right here.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "push-burst/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Privacy policy",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "waddle-rush/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Little penguin.Big rush.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "waddle-rush/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "A little help, right here.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "waddle-rush/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Privacy policy",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "ko/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "작은 게임,기분 좋은 순간.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "ko/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "다시 즐겁게 플레이하도록.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "ko/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "게임별 개인정보 안내",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "ko/terms/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "이용약관",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "ko/push-burst/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "살짝 밀면,기분 좋게 팡!",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "ko/push-burst/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "무엇을 도와드릴까요?",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "ko/push-burst/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "개인정보처리방침",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "ko/waddle-rush/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "작은 펭귄의커다란 도전.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "ko/waddle-rush/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "무엇을 도와드릴까요?",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 768,
+      "page": "ko/waddle-rush/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "개인정보처리방침",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Little games.Lovely moments.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Let’s get you back to playing.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Privacy, by game.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "terms/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Terms of use",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "push-burst/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "A little push.A big pop.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "push-burst/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "A little help, right here.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "push-burst/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Privacy policy",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "waddle-rush/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Little penguin.Big rush.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "waddle-rush/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "A little help, right here.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "waddle-rush/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "Privacy policy",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "ko/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "작은 게임,기분 좋은 순간.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "ko/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "다시 즐겁게 플레이하도록.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "ko/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "게임별 개인정보 안내",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "ko/terms/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "이용약관",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "ko/push-burst/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "살짝 밀면,기분 좋게 팡!",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "ko/push-burst/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "무엇을 도와드릴까요?",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "ko/push-burst/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "개인정보처리방침",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "ko/waddle-rush/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "작은 펭귄의커다란 도전.",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "ko/waddle-rush/support/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "무엇을 도와드릴까요?",
+      "smallLinks": [],
+      "outOfBounds": []
+    },
+    {
+      "width": 1440,
+      "page": "ko/waddle-rush/privacy/index.html",
+      "ok": true,
+      "overflow": false,
+      "brokenImages": 0,
+      "h1": "개인정보처리방침",
+      "smallLinks": [],
+      "outOfBounds": []
+    }
+  ],
+  "failures": []
+}
