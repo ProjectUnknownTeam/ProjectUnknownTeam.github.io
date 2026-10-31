@@ -16,7 +16,9 @@ Push Burst와 Waddle Rush의 게임 소개·고객지원·게임별 개인정보
 
 ## 수정과 검증
 
-- 설정: `site/config.json` (다운로드 URL은 스토어 공개 후 입력, 현재 null).
+- 설정: `site/config.json` (두 게임의 Google Play·App Store 주소와 소개 페이지 갱신일).
+- 다운로드: 메인 게임 카드와 각 게임 소개 상단에 두 스토어의 직접 링크를 표시합니다. 사용자 요청에 따라 iOS 심사 중에도 App Store 링크를 활성화합니다.
+- SEO: `site/seo.mjs`의 Organization/WebSite/WebPage/VideoGame/BreadcrumbList, 페이지별 제목·설명, canonical·한국어/영어 hreflang, 공유 미리보기, robots.txt와 사이트맵을 생성합니다. 평점·리뷰·출시일은 추정해서 넣지 않습니다. SEO 변경은 법률 페이지의 검토 상태를 변경하지 않습니다.
 - 콘텐츠: `site/content.mjs`, `site/waddle-content.mjs`, `site/platform-disclosures.mjs`.
 - 스타일: `site/site.css`. 그림은 두 게임 저장소의 기존 정식 소개 이미지·아이콘입니다. 새 유료 자산이나 외부 폰트·스크립트는 사용하지 않습니다.
 - `node scripts/build-site.mjs`

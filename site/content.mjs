@@ -15,8 +15,8 @@ export function makeContent(config) {
 
   const push = structuredClone(waddle);
   push.en.home = {
-    title: 'Push Burst — A little push. A satisfying pop.',
-    description: 'Push colourful jelly blocks, build satisfying chains and try Classic and Puzzle modes in Push Burst.',
+    title: 'Push Burst — Jelly Block Puzzle Game | ProjectUnknown',
+    description: 'Push colourful jelly blocks and create satisfying chains in Push Burst. Explore Classic and Puzzle modes, find mobile downloads and get official player support.',
     eyebrow: 'A colourful jelly-block puzzle', headline: 'A little push.<br>A big <em>pop.</em>',
     intro: 'Make room, line up your next move and watch the jelly blocks burst. A small puzzle with plenty of satisfying moments.',
     discover: 'Meet Push Burst', help: 'Player support', availability: 'A puzzle for iPhone and Android.',
@@ -33,8 +33,8 @@ export function makeContent(config) {
     playStore: 'Get it on Google Play', appStore: 'Download on the App Store'
   };
   push.ko.home = {
-    title: 'Push Burst — 살짝 밀면, 기분 좋게 팡!',
-    description: '알록달록한 젤리 블록을 밀고 연쇄를 만들어요. 클래식과 퍼즐 모드를 즐기는 Push Burst.',
+    title: 'Push Burst — 젤리 블록 퍼즐 게임 | ProjectUnknown',
+    description: '젤리 블록을 밀고 연쇄를 만드는 모바일 퍼즐 게임 Push Burst. 클래식과 퍼즐 모드, Google Play·App Store 다운로드 링크와 공식 고객지원을 만나보세요.',
     eyebrow: '알록달록 젤리 블록 퍼즐', headline: '살짝 밀면,<br>기분 좋게 <em>팡!</em>',
     intro: '다음 블록이 들어갈 자리를 만들고, 기분 좋은 연쇄를 완성해요. 작은 한 수가 커다란 재미가 돼요.',
     discover: '어떤 게임인가요?', help: '고객지원', availability: 'iPhone과 Android를 위한 퍼즐 게임이에요.',
@@ -111,7 +111,7 @@ export function makeContent(config) {
   const common = {
     en: {
       nav: { home: 'Our games', support: 'Support', privacy: 'Privacy', terms: 'Terms' },
-      home: { title: 'ProjectUnknown — Little games. Lovely moments.', description: 'Meet Push Burst and Waddle Survival. Official games, player support, privacy policies and terms from ProjectUnknown.', eyebrow: 'Made for your little breaks', headline: 'Little games.<br>Lovely <em>moments.</em>', intro: 'A satisfying pop. An unexpected escape. Discover small games with plenty of personality.', view: 'Explore the game', support: 'Get support', pushType: 'Jelly-block puzzle', waddleType: 'Survival arcade', pushBody: 'A little thinking, a little pushing, and a whole lot of popping.', waddleBody: 'Dodge the snowballs. Chase the fish. Stay very, very cute.' },
+      home: { title: 'ProjectUnknown Games | Waddle Survival & Push Burst', description: 'Discover Waddle Survival, a cute penguin survival game, and Push Burst, a jelly block puzzle. Find official mobile downloads and support from ProjectUnknown.', eyebrow: 'Made for your little breaks', headline: 'Little games.<br>Lovely <em>moments.</em>', intro: 'A satisfying pop. An unexpected escape. Discover small games with plenty of personality.', view: 'Explore the game', support: 'Get support', pushType: 'Jelly-block puzzle', waddleType: 'Survival arcade', pushBody: 'A little thinking, a little pushing, and a whole lot of popping.', waddleBody: 'Dodge the snowballs. Chase the fish. Stay very, very cute.' },
       footer: 'Small games. A little more joy.',
       support: { title: 'Let’s get you back to playing.', description: 'Official support for Push Burst and Waddle Survival by ProjectUnknown.', eyebrow: 'Player support', intro: 'Choose your game for controls, saved progress, purchases and privacy help.', contact: 'Send us a note', contactBody: 'Tell us which game you are playing, your device model, operating-system version, game version and what happened. Please do not include passwords or payment details.' },
       privacy: { title: 'Privacy, by game.', description: 'Privacy policies for Push Burst, Waddle Survival and the ProjectUnknown website.', eyebrow: 'Your information', intro: 'Different games use different services. Choose your game to see exactly which policy applies.', push: 'Local progress, ads, platform leaderboards and optional purchases.', waddle: 'Local progress, cosmetic unlocks and ads. No game account, leaderboard or in-app purchases.', link: 'Read privacy policy', webTitle: 'When you visit this website', webBody: 'We do not add tracking scripts, advertising, third-party fonts, cookies or local-storage tracking to these pages. GitHub Pages provides hosting and may process IP addresses and request information to operate and secure its services.', contact: 'For a privacy request, include the game name and email us at', website: 'GitHub Privacy Statement' },
@@ -121,9 +121,9 @@ export function makeContent(config) {
     },
     ko: {
       nav: { home: '게임 소개', support: '고객지원', privacy: '개인정보처리방침', terms: '이용약관' },
-      home: { title: 'ProjectUnknown — 작은 게임, 기분 좋은 순간', description: 'Push Burst와 Waddle Survival를 만나보세요. ProjectUnknown의 게임 소개, 고객지원, 개인정보처리방침과 이용약관입니다.', eyebrow: '잠깐의 여유가 조금 더 즐겁도록', headline: '작은 게임,<br>기분 좋은 <em>순간.</em>', intro: '시원하게 터지는 블록, 아슬아슬하게 피한 눈덩이. 저마다의 매력을 가진 작은 게임들을 만나보세요.', view: '게임 알아보기', support: '고객지원', pushType: '젤리 블록 퍼즐', waddleType: '무한 생존 아케이드', pushBody: '조금 생각하고, 살짝 밀고, 기분 좋게 팡팡!', waddleBody: '눈덩이는 요리조리, 물고기는 냠냠. 귀여움은 가득.' },
+      home: { title: 'ProjectUnknown 게임 | Waddle Survival·Push Burst', description: 'ProjectUnknown의 모바일 게임을 만나보세요. 펭귄 생존 게임 Waddle Survival와 젤리 블록 퍼즐 Push Burst의 공식 다운로드 링크, 게임 소개와 고객지원을 제공합니다.', eyebrow: '잠깐의 여유가 조금 더 즐겁도록', headline: '작은 게임,<br>기분 좋은 <em>순간.</em>', intro: '시원하게 터지는 블록, 아슬아슬하게 피한 눈덩이. 저마다의 매력을 가진 작은 게임들을 만나보세요.', view: '게임 알아보기', support: '고객지원', pushType: '젤리 블록 퍼즐', waddleType: '무한 생존 아케이드', pushBody: '조금 생각하고, 살짝 밀고, 기분 좋게 팡팡!', waddleBody: '눈덩이는 요리조리, 물고기는 냠냠. 귀여움은 가득.' },
       footer: '작은 게임으로 전하는 기분 좋은 순간.',
-      support: { title: '다시 즐겁게 플레이하도록.', description: 'ProjectUnknown의 Push Burst와 Waddle Survival 공식 고객지원입니다.', eyebrow: '고객지원', intro: '게임을 선택하면 조작, 기록, 구매와 개인정보에 관한 도움말을 볼 수 있어요.', contact: '이메일로 문의하기', contactBody: '게임 이름, 기기 모델, 운영체제 버전, 게임 버전과 어떤 일이 있었는지 알려주세요. 비밀번호나 결제 정보는 보내지 마세요.' },
+      support: { title: '게임 고객지원', description: 'ProjectUnknown의 Push Burst와 Waddle Survival 공식 고객지원입니다.', eyebrow: '고객지원', intro: '게임을 선택하면 조작, 기록, 구매와 개인정보에 관한 도움말을 볼 수 있어요.', contact: '이메일로 문의하기', contactBody: '게임 이름, 기기 모델, 운영체제 버전, 게임 버전과 어떤 일이 있었는지 알려주세요. 비밀번호나 결제 정보는 보내지 마세요.' },
       privacy: { title: '게임별 개인정보 안내', description: 'Push Burst, Waddle Survival 및 ProjectUnknown 웹사이트의 개인정보 처리 안내입니다.', eyebrow: '개인정보처리방침', intro: '게임마다 사용하는 서비스가 달라요. 이용하는 게임을 선택해 적용되는 방침을 확인해 주세요.', push: '로컬 기록, 광고, 플랫폼 순위표와 선택형 구매.', waddle: '로컬 기록, 의상 해금과 광고. 게임 계정, 순위표, 인앱 구매는 없어요.', link: '개인정보처리방침 보기', webTitle: '이 웹사이트를 방문할 때', webBody: '이 페이지에는 운영자가 추가한 추적 스크립트, 광고, 외부 폰트, 쿠키 또는 로컬 저장소 추적 기능이 없습니다. GitHub Pages가 호스팅을 제공하며 서비스 운영과 보안을 위해 IP 주소와 요청 정보 등을 처리할 수 있습니다.', contact: '개인정보 관련 요청은 게임 이름과 함께 아래 이메일로 보내주세요.', website: 'GitHub 개인정보 안내' },
       termsIntro: `이 약관은 ${config.operator}(Project Unknown으로도 표기)가 제공하는 <strong>Push Burst</strong>와 <strong>Waddle Survival</strong>에 적용됩니다. 플레이 전에 읽어주시고 동의하지 않는 경우 이용하지 마세요. 문의처는 ${mail}입니다.`,
       termsScope: '<p>두 게임은 개발자 계정 없이 로컬 플레이를 제공하며, 기능에는 다음과 같은 차이가 있습니다.</p><ul><li><strong>Push Burst:</strong> 젤리 블록 클래식·퍼즐 모드, 선택형 플랫폼 순위표·업적, 광고와 선택형 광고 제거 구매.</li><li><strong>Waddle Survival:</strong> 무한 생존, 로컬 기록·의상 해금과 광고. 인앱 구매와 공개 순위표는 없습니다.</li></ul><p>한 게임에 관한 기능 설명이 다른 게임에도 해당 기능이 있다는 의미는 아닙니다.</p>',

@@ -21,8 +21,8 @@ export function content({ operator, email, packageName, cosmeticCount, slotCount
       review: 'Pre-publication draft. Support retention and regional privacy details are awaiting operator review.',
       updated: 'Last updated', effective: 'Effective upon publication of the approved policy.', contents: 'On this page', backTop: 'Back to top',
       home: {
-        title: 'Waddle Survival — A little penguin. A big rush.',
-        description: 'Dodge rolling snowballs, collect golden fish and take a tiny flight. Meet Waddle Survival, a cute endless survival arcade game.',
+        title: 'Waddle Survival — Penguin Survival Game | ProjectUnknown',
+        description: 'Dodge snowballs, collect fish, slide and fly in Waddle Survival. Discover a cute penguin survival arcade, challenge a friend and find official mobile downloads.',
         eyebrow: 'A pocket-sized adventure on ice',
         headline: 'Little penguin.<br>Big <em>rush.</em>',
         intro: 'Snowballs everywhere. Golden fish worth chasing. One very determined little penguin.',
@@ -35,7 +35,8 @@ export function content({ operator, email, packageName, cosmeticCount, slotCount
         features: [
           ['01', 'A close call, a big grin.', 'Keep moving as snowballs roll in from every side. A well-timed belly slide helps you slip through the chaos.'],
           ['02', 'Good fish. Great energy.', 'Collect golden fish for points and flight energy. Fill up, flap your wings and soar over the snowballs for a short escape.'],
-          ['03', 'Your very own little look.', `Unlock ${cosmeticCount} accessories across ${slotCount} categories, from cosy scarves to little wings. All style, with no change to collision or speed.`]
+          ['03', 'Your very own little look.', `Unlock accessories across ${slotCount} categories, from cosy scarves to little wings. All style, with no change to collision or speed.`],
+          ['04', 'Share the ice with a friend.', 'Create a six-digit invite code and face a friend on the same ice. Race for fish, nudge each other and see who survives longer.']
         ],
         note: 'Designed for portrait play · 16 game languages · Progress saved on your device',
         supportTitle: 'A little help, right here.', supportBody: 'Questions about playing, progress or privacy? We’re only an email away.', supportLink: 'Visit support',
@@ -101,8 +102,8 @@ export function content({ operator, email, packageName, cosmeticCount, slotCount
       review: '게시 전 검토본입니다. 고객지원 정보의 보관 기준과 배포 지역별 개인정보 고지사항을 운영자가 확인 중입니다.',
       updated: '최종 수정일', effective: '검토를 마친 정책의 공개일부터 적용됩니다.', contents: '이 페이지의 내용', backTop: '맨 위로',
       home: {
-        title: 'Waddle Survival — 작은 펭귄의 아슬아슬한 빙판 모험',
-        description: '굴러오는 눈덩이를 피하고, 황금 물고기를 모아 잠깐 날아올라요. 귀여운 무한 생존 아케이드 게임 Waddle Survival.',
+        title: 'Waddle Survival — 펭귄 생존 게임 | ProjectUnknown',
+        description: '눈덩이를 피하고 물고기를 모아 슬라이드하고 날아오르는 펭귄 생존 게임 Waddle Survival. 친구 대전, 모바일 다운로드 링크와 공식 고객지원을 확인하세요.',
         eyebrow: '손안에서 펼쳐지는 빙판 모험',
         headline: '작은 펭귄의<br><em>커다란</em> 도전.',
         intro: '사방에서 굴러오는 눈덩이, 놓치기 아까운 황금 물고기. 오늘도 작은 펭귄은 씩씩하게 달려요.',
@@ -115,7 +116,8 @@ export function content({ operator, email, packageName, cosmeticCount, slotCount
         features: [
           ['01', '아슬아슬해서 더 짜릿해요.', '사방에서 굴러오는 눈덩이를 피해 계속 움직여요. 위기의 순간에는 배를 깔고 쓱 미끄러져요.'],
           ['02', '물고기를 먹고, 날아올라요.', '황금 물고기는 점수와 비행 에너지가 돼요. 에너지를 채우고 날개를 파닥여 눈덩이 위로 잠깐 날아올라요.'],
-          ['03', '나만의 귀여움을 모아요.', `포근한 목도리부터 작은 날개까지, ${slotCount}가지 부위의 ${cosmeticCount}종 소품을 해금해요. 외형만 바뀌며 충돌 크기와 이동 속도는 같아요.`]
+          ['03', '나만의 귀여움을 모아요.', `포근한 목도리부터 작은 날개까지, ${slotCount}가지 부위의 소품을 해금해요. 외형만 바뀌며 충돌 크기와 이동 속도는 같아요.`],
+          ['04', '친구와 같은 빙판에서 겨뤄요.', '숫자 여섯 자리 초대 코드로 친구를 불러요. 같은 눈덩이를 피하고 물고기를 먼저 먹으며, 서로 밀어내고 누가 더 오래 살아남는지 겨뤄보세요.']
         ],
         note: '세로 화면 플레이 · 게임 내 16개 언어 · 기기에 저장되는 기록',
         supportTitle: '도움이 필요할 땐, 여기로.', supportBody: '플레이 방법, 기록, 개인정보까지. 궁금한 점이 있다면 편하게 알려주세요.', supportLink: '고객지원 바로 가기',

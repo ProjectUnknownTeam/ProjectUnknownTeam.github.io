@@ -59,6 +59,17 @@ html[lang='ko'] .eyebrow { letter-spacing: .06em; font-size: .88rem; }
 .button { display: inline-flex; align-items: center; justify-content: center; text-align: center; padding: 15px 24px; min-height: 52px; border-radius: 18px; background: var(--apricot); color: var(--ink); font-weight: 750; text-decoration: none; box-shadow: 0 3px 0 #dca180; line-height: 1.5; }
 .button:hover { background: #ffd4bd; text-decoration: none; }
 .button.secondary { background: #f3ebde; box-shadow: 0 3px 0 #d9cbb7; }
+.store-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: 390px; margin-bottom: 22px; }
+.store-button { display: flex; flex-direction: column; justify-content: center; gap: 2px; min-height: 68px; padding: 10px 16px; border: 1px solid var(--ink); border-radius: 16px; background: var(--ink); color: white; text-decoration: none; }
+.store-button span { font-size: .72rem; line-height: 1.45; color: #e5edf4; }
+.store-button strong { font-size: 1.13rem; line-height: 1.4; letter-spacing: -.02em; }
+.store-button:hover { background: #35506a; text-decoration: none; }
+.breadcrumbs { margin-top: 14px; font-size: .83rem; color: var(--muted); }
+.breadcrumbs ol { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 0 10px; margin: 0; padding: 0; }
+.breadcrumbs li { display: flex; align-items: center; gap: 10px; }
+.breadcrumbs li + li::before { content: '/'; color: #9c9e9e; }
+.breadcrumbs a, .breadcrumbs span { display: inline-flex; align-items: center; min-height: 44px; }
+.breadcrumbs + .hero, .breadcrumbs + .page-heading { padding-top: 24px; }
 .text-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 650; }
 .hero { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 18px; padding: 70px 0 64px; }
 .hero h1 { margin-bottom: 24px; }
@@ -196,6 +207,7 @@ details p { color: var(--muted); margin-bottom: 24px; max-width: 750px; overflow
   .languages { padding-left: 4px; }
   .languages a { min-width: 40px; }
   .game-card-copy, .help-banner, .contact { padding: 22px; }
+  .game-card .store-buttons { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .button { transition: background-color .15s ease; }

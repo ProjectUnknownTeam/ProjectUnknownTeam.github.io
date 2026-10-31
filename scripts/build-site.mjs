@@ -3,7 +3,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 import { makeContent } from '../site/content.mjs';
+import { structuredData } from '../site/seo.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const config = JSON.parse(fs.readFileSync(path.join(root, 'site/config.json'), 'utf8'));
@@ -18,10 +20,25 @@ function write(file, value) { const target = path.join(root, file); fs.mkdirSync
 function anchor(file, target, text, extra = '') { return `<a href="${esc(relative(file, target))}"${extra}>${text}</a>`; }
 const gameAsset = id => id === 'waddle-rush' ? 'waddle' : 'push-burst';
 
+function downloads(lang, game) {
+  const info = config.games[game];
+  const labels = games[game][lang].home;
+  const stores = [['googlePlay','Google Play',lang === 'ko' ? 'Android 다운로드' : 'Get it on',labels.playStore],['appStore','App Store',lang === 'ko' ? 'iPhone · iPad 다운로드' : 'Download on the',labels.appStore]];
+  return `<div class="store-buttons" role="group" aria-label="${esc(info.name)} ${lang === 'ko' ? '다운로드' : 'downloads'}">${stores.filter(([key])=>info[key]).map(([key,name,hint,label])=>`<a class="store-button" href="${esc(info[key])}" aria-label="${esc(info.name+' — '+label)}"><span>${esc(hint)}</span><strong>${name}</strong></a>`).join('')}</div>`;
+}
+
 function page({ lang, file, kind, game, title, description, body, canonicalFile = file, noindex = false }) {
   const c = common[lang];
+  if (!title.includes('ProjectUnknown')) title += ' | ProjectUnknown';
   const other = lang === 'en' ? 'ko' : 'en';
   const slug = canonicalFile.replace(/^ko\//, '').replace(/\/?index\.html$/, '');
+  const breadcrumbs = [{name:lang === 'ko' ? '게임 소개' : 'Games',file:route(lang),url:url(route(lang))}];
+  if (game) breadcrumbs.push({name:config.games[game].name,file:route(lang,game),url:url(route(lang,game))});
+  if (kind !== 'home' && kind !== 'notFound') breadcrumbs.push({name:c.nav[kind],file:canonicalFile,url:url(canonicalFile)});
+  const crumbHtml = kind === 'notFound' || breadcrumbs.length < 2 ? '' : `<nav class="breadcrumbs" aria-label="${lang === 'ko' ? '현재 위치' : 'Breadcrumb'}"><ol>${breadcrumbs.map((b,i)=>`<li>${i === breadcrumbs.length-1 ? `<span aria-current="page">${esc(b.name)}</span>` : anchor(file,b.file,esc(b.name))}</li>`).join('')}</ol></nav>`;
+  const graph = structuredData({config,lang,kind,game,title,description,canonical:url(canonicalFile),breadcrumbs});
+  const jsonLd = graph ? JSON.stringify(graph).replace(/</g,'\\u003c') : '';
+  const scriptPolicy = jsonLd ? `; script-src 'sha256-${createHash('sha256').update(jsonLd).digest('base64')}'` : '';
   const languageLink = language => anchor(file, route(language, slug), language === 'en' ? 'EN' : '한국어', ` lang="${language}" hreflang="${language}"${language === lang ? ' aria-current="true"' : ''}`);
   const nav = (key, target) => anchor(file, target, esc(c.nav[key]), kind === key && !game ? ' aria-current="page"' : '');
   const brand = anchor(file, route(lang), '<span class="brand-mark" aria-hidden="true">p.</span><span>ProjectUnknown</span>', ' class="brand"');
@@ -35,14 +52,14 @@ function page({ lang, file, kind, game, title, description, body, canonicalFile 
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#fffaf1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'self'; base-uri 'none'; form-action 'none'${scriptPolicy}">
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
-  ${noindex ? '<meta name="robots" content="noindex,follow">' : ''}
+  <meta name="robots" content="${noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large'}">
   <link rel="canonical" href="${url(canonicalFile)}">
-  <link rel="alternate" hreflang="${other}" href="${url(route(other, slug))}">
+  ${kind === 'notFound' ? '' : `<link rel="alternate" hreflang="${other}" href="${url(route(other, slug))}">
   <link rel="alternate" hreflang="${lang}" href="${url(canonicalFile)}">
-  <link rel="alternate" hreflang="x-default" href="${url(route('en', slug))}">
+  <link rel="alternate" hreflang="x-default" href="${url(route('en', slug))}">`}
   <link rel="stylesheet" href="${relative(file, 'assets/site.css')}">
   <link rel="icon" type="image/svg+xml" href="${relative(file, 'assets/favicon.svg')}">
   <meta property="og:type" content="website">
@@ -51,13 +68,23 @@ function page({ lang, file, kind, game, title, description, body, canonicalFile 
   <meta property="og:description" content="${esc(description)}">
   <meta property="og:url" content="${url(canonicalFile)}">
   <meta property="og:image" content="${new URL(`assets/${asset}`, config.baseUrl)}">
+  <meta property="og:image:alt" content="${esc(game ? config.games[game].name : 'ProjectUnknown mobile games')}">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="500">
   <meta property="og:locale" content="${lang === 'ko' ? 'ko_KR' : 'en_US'}">
+  <meta property="og:locale:alternate" content="${lang === 'ko' ? 'en_US' : 'ko_KR'}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${esc(title)}">
+  <meta name="twitter:description" content="${esc(description)}">
+  <meta name="twitter:image" content="${new URL(`assets/${asset}`, config.baseUrl)}">
+  <meta name="twitter:image:alt" content="${esc(game ? config.games[game].name : 'ProjectUnknown mobile games')}">
+  ${jsonLd ? `<script type="application/ld+json">${jsonLd}</script>` : ''}
 </head>
 <body id="top">
   <a class="skip" href="#main">${esc(c.skip)}</a>
   <header class="site-header wrap">${brand}<nav class="site-nav" aria-label="${lang === 'ko' ? '주 메뉴' : 'Main navigation'}">${nav('home', route(lang))}${nav('support', route(lang, 'support'))}<span class="languages" role="group" aria-label="${esc(c.language)}">${languageLink('en')}${languageLink('ko')}</span></nav></header>
   <div class="wrap">${localGameNav}</div>
-  <main id="main" class="wrap">${body}</main>
+  <main id="main" class="wrap">${crumbHtml}${body}</main>
   <footer class="site-footer wrap"><div class="footer-top"><div>${brand}<p class="footer-tag">${esc(c.footer)}</p></div><nav class="footer-links" aria-label="${lang === 'ko' ? '사이트 안내' : 'Site information'}">${anchor(file, route(lang, 'support'), esc(c.nav.support))}${anchor(file, route(lang, 'privacy'), esc(c.nav.privacy))}${anchor(file, route(lang, 'terms'), esc(c.nav.terms))}</nav></div><p class="copyright">© ${config.updated.slice(0,4)} ${esc(config.operator)} · <a href="mailto:${esc(config.email)}">${esc(config.email)}</a></p></footer>
 </body>
 </html>`;
@@ -71,7 +98,7 @@ function gameCards(lang, file, type = 'home') {
     const asset = gameAsset(id);
     const name = config.games[id].name;
     if (type !== 'home') return `<article class="policy-card"><img src="${relative(file, `assets/${asset}-icon.png`)}" width="64" height="64" alt=""><h2>${esc(name)}</h2><p>${esc(c.privacy[id === 'push-burst' ? 'push' : 'waddle'])}</p>${anchor(file, route(lang, `${id}/${type}`), esc(type === 'privacy' ? c.privacy.link : c.home.support), ' class="button secondary"')}</article>`;
-    return `<article class="game-card">${anchor(file, route(lang, id), `<img src="${relative(file, `assets/${asset}-feature.png`)}" alt="${esc(name)}" width="1024" height="500">`)}<div class="game-card-copy"><p class="card-type">${esc(c.home[id === 'push-burst' ? 'pushType' : 'waddleType'])}</p><h2>${esc(name)}</h2><p>${esc(c.home[id === 'push-burst' ? 'pushBody' : 'waddleBody'])}</p><div class="button-row">${anchor(file, route(lang, id), esc(c.home.view), ' class="button"')}${anchor(file, route(lang, `${id}/support`), esc(c.home.support), ' class="text-link"')}</div></div></article>`;
+    return `<article class="game-card">${anchor(file, route(lang, id), `<img src="${relative(file, `assets/${asset}-feature.png`)}" alt="${esc(name)}" width="1024" height="500">`)}<div class="game-card-copy"><p class="card-type">${esc(c.home[id === 'push-burst' ? 'pushType' : 'waddleType'])}</p><h2>${esc(name)}</h2><p>${esc(c.home[id === 'push-burst' ? 'pushBody' : 'waddleBody'])}</p>${downloads(lang,id)}<div class="button-row">${anchor(file, route(lang, id), esc(c.home.view), ' class="button"')}${anchor(file, route(lang, `${id}/support`), esc(c.home.support), ' class="text-link"')}</div></div></article>`;
   }).join('')}</div>`;
 }
 function heading(data) { return `<header class="page-heading"><p class="eyebrow">${esc(data.eyebrow)}</p><h1>${esc(data.title)}</h1><div class="intro">${data.intro}</div></header>`; }
@@ -98,9 +125,7 @@ for (const lang of languages) {
     const h = g.home;
     const info = config.games[game];
     file = route(lang, game);
-    const stores = [['googlePlay', h.playStore], ['appStore', h.appStore]].filter(([key]) => info[key]);
-    const storeButtons = stores.map(([key,label]) => `<a class="button secondary" href="${esc(info[key])}">${esc(label)}</a>`).join('');
-    page({ lang, file, kind:'home', game, ...h, body:`<section class="hero"><div><p class="eyebrow">${esc(h.eyebrow)}</p><h1>${h.headline}</h1><p class="intro">${esc(h.intro)}</p><div class="button-row"><a class="button" href="#discover">${esc(h.discover)}</a>${anchor(file,route(lang,`${game}/support`),esc(h.help),' class="text-link"')}</div>${stores.length ? `<div class="button-row">${storeButtons}</div>` : `<p class="small">${esc(h.availability)}</p>`}</div><figure class="hero-art${game === 'push-burst' ? ' push' : ''}"><img src="${relative(file,game === 'waddle-rush' ? 'assets/waddle-penguin.png' : 'assets/push-burst-icon.png')}" width="${game === 'waddle-rush' ? '1280' : '512'}" height="${game === 'waddle-rush' ? '1280' : '512'}" alt="${esc(h.artAlt)}" fetchpriority="high">${h.sticker ? `<span class="sticker" aria-hidden="true">${h.sticker}</span>` : ''}</figure></section><section id="discover" class="features"><div><p class="eyebrow">${esc(h.sectionLabel)}</p><h2>${h.sectionTitle}</h2><p>${esc(h.sectionIntro)}</p><p class="feature-note">${esc(h.note)}</p></div><div>${h.features.map(([n,title,body])=>`<article class="feature"><span class="feature-number" aria-hidden="true">${n}</span><div><h3>${esc(title)}</h3><p>${esc(body)}</p></div></article>`).join('')}</div></section><section class="help-banner"><div><h2>${esc(h.supportTitle)}</h2><p>${esc(h.supportBody)}</p></div>${anchor(file,route(lang,`${game}/support`),esc(h.supportLink),' class="button"')}</section>` });
+    page({ lang, file, kind:'home', game, ...h, body:`<section class="hero"><div><p class="eyebrow">${esc(h.eyebrow)}</p><h1>${h.headline}</h1><p class="intro">${esc(h.intro)}</p>${downloads(lang,game)}<div class="button-row"><a class="button" href="#discover">${esc(h.discover)}</a>${anchor(file,route(lang,`${game}/support`),esc(h.help),' class="text-link"')}</div></div><figure class="hero-art${game === 'push-burst' ? ' push' : ''}"><img src="${relative(file,game === 'waddle-rush' ? 'assets/waddle-penguin.png' : 'assets/push-burst-icon.png')}" width="${game === 'waddle-rush' ? '1280' : '512'}" height="${game === 'waddle-rush' ? '1280' : '512'}" alt="${esc(h.artAlt)}" fetchpriority="high">${h.sticker ? `<span class="sticker" aria-hidden="true">${h.sticker}</span>` : ''}</figure></section><section id="discover" class="features"><div><p class="eyebrow">${esc(h.sectionLabel)}</p><h2>${h.sectionTitle}</h2><p>${esc(h.sectionIntro)}</p><p class="feature-note">${esc(h.note)}</p></div><div>${h.features.map(([n,title,body])=>`<article class="feature"><span class="feature-number" aria-hidden="true">${n}</span><div><h3>${esc(title)}</h3><p>${esc(body)}</p></div></article>`).join('')}</div></section><section class="help-banner"><div><h2>${esc(h.supportTitle)}</h2><p>${esc(h.supportBody)}</p></div>${anchor(file,route(lang,`${game}/support`),esc(h.supportLink),' class="button"')}</section>` });
     file = route(lang, `${game}/support`);
     page({ lang, file, kind:'support', game, title:`${config.games[game].name} · ${c.nav.support}`, description:g.support.description, body:`${heading(g.support)}${contact(lang,g.support)}<section class="faq"><h2>${esc(g.support.faqTitle)}</h2>${g.support.questions.map(([q,a])=>`<details><summary>${esc(q)}</summary><p>${a}</p></details>`).join('')}</section>` });
     file = route(lang, `${game}/privacy`);
@@ -125,6 +150,6 @@ write('assets/favicon.svg','<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0
 write('app-ads.txt', `google.com, ${config.publisherId}, DIRECT, f08c47fec0942fa0`);
 write('.nojekyll','');
 write('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${new URL('sitemap.xml',config.baseUrl)}`);
-write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.filter(r=>!r.noindex).map(r=>`\n  <url><loc>${url(r.file)}</loc><lastmod>${config.updated}</lastmod></url>`).join('')}\n</urlset>`);
+write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${routes.filter(r=>!r.noindex).map(r=>`\n  <url><loc>${url(r.file)}</loc><lastmod>${r.kind === 'home' ? config.marketingUpdated || config.updated : config.updated}</lastmod></url>`).join('')}\n</urlset>`);
 write('site/routes.json',JSON.stringify(routes,null,2));
 console.log(`Generated ${routes.length} static pages, 2 legacy policies and a 404 page. Nothing published.`);

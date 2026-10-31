@@ -12,16 +12,24 @@
     "push-burst": {
       "name": "Push Burst",
       "packageName": "com.projectunknown.pushburst.game",
-      "googlePlay": null,
-      "appStore": null
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.projectunknown.pushburst.game",
+      "appStore": "https://apps.apple.com/app/id6824529895",
+      "genre": [
+        "Puzzle"
+      ]
     },
     "waddle-rush": {
       "name": "Waddle Survival",
       "packageName": "com.projectunknown.waddlerush",
       "cosmetics": 124,
       "slots": 6,
-      "googlePlay": null,
-      "appStore": null
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.projectunknown.waddlerush",
+      "appStore": "https://apps.apple.com/app/id6827887215",
+      "genre": [
+        "Arcade",
+        "Survival"
+      ]
     }
-  }
+  },
+  "marketingUpdated": "2026-10-31"
 }

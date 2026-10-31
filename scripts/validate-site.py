@@ -2,8 +2,11 @@
 """Validate static routes, local links, anchors, disclosure separation and ads host data."""
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlsplit, unquote
+from urllib.parse import urlsplit, unquote, urljoin
+import base64
+import hashlib
 import json
+import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = json.loads((ROOT / 'site/config.json').read_text())
@@ -14,18 +17,36 @@ class Document(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.links, self.ids, self.images, self.headings = [], [], [], []
         self.lang, self.scripts, self.forms, self.external_assets = None, 0, 0, []
+        self.meta, self.headlinks, self.schemas, self.downloads = {}, [], [], []
+        self.title, self.in_title, self.in_schema, self.schema_text = '', False, False, ''
         self.feed(text)
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if tag == 'html': self.lang = a.get('lang')
         if tag == 'h1': self.headings.append(tag)
         if 'id' in a: self.ids.append(a['id'])
-        if tag == 'script': self.scripts += 1
+        if tag == 'title': self.in_title = True
+        if tag == 'meta': self.meta[a.get('name', a.get('property', a.get('http-equiv')))] = a.get('content', '')
+        if tag == 'link': self.headlinks.append(a)
+        if tag == 'script':
+            if a.get('type') == 'application/ld+json' and not a.get('src'):
+                self.in_schema, self.schema_text = True, ''
+            else: self.scripts += 1
         if tag == 'form': self.forms += 1
-        if tag == 'a': self.links.append(a.get('href', ''))
+        if tag == 'a':
+            self.links.append(a.get('href', ''))
+            if 'store-button' in a.get('class', '').split(): self.downloads.append(a)
         if tag == 'img': self.images.append(a)
         if tag in ('img','script') and a.get('src'): self.links.append(a['src'])
         if tag == 'link' and a.get('rel') in ('stylesheet','icon'): self.links.append(a['href'])
+    def handle_data(self, value):
+        if self.in_title: self.title += value
+        if self.in_schema: self.schema_text += value
+    def handle_endtag(self, tag):
+        if tag == 'title': self.in_title = False
+        if tag == 'script' and self.in_schema:
+            self.schemas.append((json.loads(self.schema_text), self.schema_text))
+            self.in_schema = False
 
 files = [x['file'] for x in ROUTES] + ['privacy.html','privacy-ko.html','404.html']
 docs = {name: Document((ROOT/name).read_text()) for name in files}
@@ -40,6 +61,12 @@ for name, doc in docs.items():
     check(len(doc.headings) == 1, f'{name}: expected one H1')
     check(len(doc.ids) == len(set(doc.ids)), f'{name}: duplicate anchors')
     check(doc.scripts == 0 and doc.forms == 0, f'{name}: unexpected tracking/form/script surface')
+    check(bool(doc.title.strip()) and bool(doc.meta.get('description')), f'{name}: missing search copy')
+    check(doc.meta.get('twitter:card') == 'summary_large_image', f'{name}: missing sharing card')
+    for schema, raw in doc.schemas:
+        check(schema.get('@context') == 'https://schema.org', f'{name}: invalid structured data')
+        digest = base64.b64encode(hashlib.sha256(raw.encode()).digest()).decode()
+        check(f"'sha256-{digest}'" in doc.meta.get('Content-Security-Policy',''), f'{name}: structured-data CSP mismatch')
     for img in doc.images:
         check('alt' in img and 'width' in img and 'height' in img, f'{name}: incomplete image metadata')
     for href in doc.links:
@@ -53,6 +80,39 @@ for name, doc in docs.items():
         if part.fragment:
             relative = target.relative_to(ROOT).as_posix()
             check(relative in docs and unquote(part.fragment) in docs[relative].ids, f'{name}: missing anchor {href}')
+
+titles = set()
+for route in ROUTES:
+    name, lang = route['file'], route['lang']
+    doc = docs[name]
+    canonical = urljoin(CONFIG['baseUrl'], name.removesuffix('index.html'))
+    check([x['href'] for x in doc.headlinks if x.get('rel') == 'canonical'] == [canonical], f'{name}: wrong canonical')
+    plain = name.removeprefix('ko/')
+    expected_alternates = {'en':urljoin(CONFIG['baseUrl'],plain.removesuffix('index.html')), 'ko':urljoin(CONFIG['baseUrl'],'ko/'+plain.removesuffix('index.html'))}
+    expected_alternates['x-default'] = expected_alternates['en']
+    check({x.get('hreflang'):x.get('href') for x in doc.headlinks if x.get('rel')=='alternate'} == expected_alternates, f'{name}: language alternates differ')
+    check(('noindex' in doc.meta['robots']) == route['noindex'], f'{name}: incorrect indexing policy')
+    check(len(doc.schemas) == 1, f'{name}: missing schema graph')
+    check(doc.title not in titles, f'{name}: duplicate page title')
+    titles.add(doc.title)
+    if route['kind'] == 'home':
+        games = [route['game']] if route['game'] else list(CONFIG['games'])
+        expected_links = {CONFIG['games'][g][key] for g in games for key in ['googlePlay','appStore']}
+        check({a['href'] for a in doc.downloads} == expected_links, f'{name}: download destination mismatch')
+        check(all(a.get('aria-label') and not a.get('aria-disabled') for a in doc.downloads), f'{name}: inaccessible download button')
+        graph = doc.schemas[0][0]['@graph']
+        if route['game']:
+            game = next(x for x in graph if x['@type'] == 'VideoGame')
+            check(set(game['sameAs']) == expected_links, f'{name}: game store identity mismatch')
+            check('aggregateRating' not in game and 'review' not in game, f'{name}: unsupported rating claim')
+
+check(not any(x.get('rel') == 'alternate' for x in docs['404.html'].headlinks), '404 must not advertise nonexistent translations')
+ns = {'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+sitemap = ET.parse(ROOT/'sitemap.xml')
+listed = [x.text for x in sitemap.findall('s:url/s:loc',ns)]
+expected_urls = {urljoin(CONFIG['baseUrl'],r['file'].removesuffix('index.html')) for r in ROUTES if not r['noindex']}
+check(set(listed) == expected_urls and len(listed) == len(set(listed)), 'Sitemap must contain unique canonical indexable pages only')
+check('Sitemap: '+urljoin(CONFIG['baseUrl'],'sitemap.xml') in (ROOT/'robots.txt').read_text(), 'Missing robots sitemap discovery')
 
 legacy = (ROOT/'privacy.html').read_text()
 check('Push Burst · Privacy policy' in legacy, 'Legacy privacy.html must remain Push Burst')
@@ -68,4 +128,4 @@ for lang in ('','ko/'):
 ads = f"google.com, {CONFIG['publisherId']}, DIRECT, f08c47fec0942fa0\n"
 check((ROOT/'app-ads.txt').read_text() == ads, 'Root app-ads.txt exact publisher')
 check((ROOT/'.nojekyll').exists(), 'Static Pages marker')
-print(f'PASS: {checks} assertions across {len(files)} HTML pages; links, anchors, identities and app-ads.txt.')
+print(f'PASS: {checks} assertions across {len(files)} HTML pages; downloads, SEO, structured data, links, identities and app-ads.txt.')

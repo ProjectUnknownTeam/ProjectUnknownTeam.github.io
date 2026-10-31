@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-31",
+  "scope": "Active Android/iOS downloads for both games and technical SEO",
+  "storeLinks": {
+    "push-burst": {
+      "name": "Push Burst",
+      "packageName": "com.projectunknown.pushburst.game",
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.projectunknown.pushburst.game",
+      "appStore": "https://apps.apple.com/app/id6824529895",
+      "genre": [
+        "Puzzle"
+      ]
+    },
+    "waddle-rush": {
+      "name": "Waddle Survival",
+      "packageName": "com.projectunknown.waddlerush",
+      "cosmetics": 124,
+      "slots": 6,
+      "googlePlay": "https://play.google.com/store/apps/details?id=com.projectunknown.waddlerush",
+      "appStore": "https://apps.apple.com/app/id6827887215",
+      "genre": [
+        "Arcade",
+        "Survival"
+      ]
+    }
+  },
+  "iosLinks": "Active by explicit owner instruction while App Store reviews are pending; numeric app IDs verified in App Store Connect.",
+  "staticValidation": {
+    "pages": 23,
+    "assertions": 2140,
+    "passed": true
+  },
+  "responsiveValidation": {
+    "routes": [
+      "/",
+      "/ko/",
+      "/waddle-rush/",
+      "/ko/waddle-rush/",
+      "/push-burst/",
+      "/ko/push-burst/"
+    ],
+    "cssWidths": [
+      320,
+      390,
+      1440
+    ],
+    "cases": 18,
+    "measurement": "Actual same-origin iframe viewport widths in Chrome; default browser viewport override was ineffective and its earlier checks were discarded.",
+    "overflow": 0,
+    "brokenImages": 0,
+    "outOfBoundsButtons": 0,
+    "minimumButtonHeight": 68
+  },
+  "preservedFiles": [
+    "app-ads.txt",
+    "googlee45c749df0753451.html"
+  ],
+  "staging": "Original byte contents verified in _site for both preserved files.",
+  "searchConsoleBefore": "Existing sitemap submitted 2026-10-30 shows Could not fetch. Resubmit after public deployment.",
+  "publication": "Pending push and public verification."
+}
