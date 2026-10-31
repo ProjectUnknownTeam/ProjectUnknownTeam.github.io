@@ -6,22 +6,13 @@
       "name": "Push Burst",
       "packageName": "com.projectunknown.pushburst.game",
       "googlePlay": "https://play.google.com/store/apps/details?id=com.projectunknown.pushburst.game",
-      "appStore": "https://apps.apple.com/app/id6824529895",
-      "genre": [
-        "Puzzle"
-      ]
+      "appStore": "https://apps.apple.com/app/id6824529895"
     },
     "waddle-rush": {
       "name": "Waddle Survival",
       "packageName": "com.projectunknown.waddlerush",
-      "cosmetics": 124,
-      "slots": 6,
       "googlePlay": "https://play.google.com/store/apps/details?id=com.projectunknown.waddlerush",
-      "appStore": "https://apps.apple.com/app/id6827887215",
-      "genre": [
-        "Arcade",
-        "Survival"
-      ]
+      "appStore": "https://apps.apple.com/app/id6827887215"
     }
   },
   "iosLinks": "Active by explicit owner instruction while App Store reviews are pending; numeric app IDs verified in App Store Connect.",
@@ -57,5 +48,106 @@
   ],
   "staging": "Original byte contents verified in _site for both preserved files.",
   "searchConsoleBefore": "Existing sitemap submitted 2026-10-30 shows Could not fetch. Resubmit after public deployment.",
-  "publication": "Pending push and public verification."
+  "publication": {
+    "commit": "fc8311a45c620005e90655ded7ae75b209a77fca",
+    "pagesRun": "https://github.com/ProjectUnknownTeam/ProjectUnknownTeam.github.io/actions/runs/41201601954",
+    "status": "success",
+    "publicChecks": [
+      {
+        "file": "index.html",
+        "httpOk": true,
+        "matchesLocal": true,
+        "sha256": "80ec91b74a27ee91ea4607f53aa61894a588905a05cd54758665169e8cd5cbf8",
+        "error": null
+      },
+      {
+        "file": "ko/index.html",
+        "httpOk": true,
+        "matchesLocal": true,
+        "sha256": "15a2bc056654bcbb0dcf9a58c48f51a64107b10ed49a7af4d112ed765e72cd43",
+        "error": null
+      },
+      {
+        "file": "waddle-rush/index.html",
+        "httpOk": true,
+        "matchesLocal": true,
+        "sha256": "511423dc065d76997e20963ee188929afaac9cbb0a7b0a9b52524c5bd535d504",
+        "error": null
+      },
+      {
+        "file": "ko/waddle-rush/index.html",
+        "httpOk": true,
+        "matchesLocal": true,
+        "sha256": "83dd0afe6619bffd8e791f6b6b9b61facdf254f1b60a42299cf5449fa19cdf65",
+        "error": null
+      },
+      {
+        "file": "push-burst/index.html",
+        "httpOk": true,
+        "matchesLocal": true,
+        "sha256": "03dbe9345496185f9519b90941561be2c9169c6a0e4d647b885ffb9dfbdf537e",
+        "error": null
+      },
+      {
+        "file": "ko/push-burst/index.html",
+        "httpOk": true,
+        "matchesLocal": true,
+        "sha256": "2ccfe0152c76f7d0f5991312934df7acd4536efdc5b94723b3b5ff2ebdf6c436",
+        "error": null
+      },
+      {
+        "file": "assets/site.css",
+        "httpOk": true,
+        "matchesLocal": true,
+        "sha256": "114422e2014b344363d56b12decfe962dae1536f265af4a7736e43057389335a",
+        "error": null
+      },
+      {
+        "file": "robots.txt",
+        "httpOk": true,
+        "matchesLocal": true,
+        "sha256": "51693eb2224ab4dc9a153c9e512d5e6c95a0a7bded900b5ee3fdbf345e74f5af",
+        "error": null
+      },
+      {
+        "file": "sitemap.xml",
+        "httpOk": true,
+        "matchesLocal": true,
+        "sha256": "afa272587a163dd9e92a54c4539b1346058c4e51f5c891a09ca646c15e61d23e",
+        "error": null
+      },
+      {
+        "file": "app-ads.txt",
+        "httpOk": true,
+        "matchesLocal": true,
+        "sha256": "1e2e35b12fccf574440af7906e6182208f9358fc6468f4ee188603e1f41fb06f",
+        "error": null
+      },
+      {
+        "file": "googlee45c749df0753451.html",
+        "httpOk": true,
+        "matchesLocal": true,
+        "sha256": "ecc073c5006f3458d7459a017d680977a77de92707f39d3e7b3270d8c9b81903",
+        "error": null
+      }
+    ]
+  },
+  "searchConsole": {
+    "sitemap": "https://projectunknownteam.github.io/sitemap.xml",
+    "submissionDate": "2026-10-31",
+    "submissionAccepted": true,
+    "urlsInFile": 14,
+    "statusAfterResubmit": "Could not fetch; discovered pages 0. Existing report has not shown a successful fetch yet.",
+    "fileAccess": "HTTP 200 application/xml; byte-identical to validated source both with and without cache query.",
+    "homepage": "https://projectunknownteam.github.io/",
+    "homepageIndexRequestAccepted": true,
+    "confirmation": "URL added to priority crawl queue.",
+    "indexed": false,
+    "note": "Request acceptance is not indexing or sitemap processing success."
+  },
+  "cleanup": {
+    "generatedSiteCopyRemoved": true,
+    "generatedSiteCopyBytes": 3644748,
+    "previewServersStopped": true
+  }
 }
